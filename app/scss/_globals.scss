@@ -1,0 +1,137 @@
+:root {
+  // background
+  --main-bkg: #3a4764;
+  --tggle-bkg: #232c43;
+  --screen-bkg: #182034;
+
+  // keys
+  --key-bkg: #637097;
+  --key-shadow: #404e72;
+  --key-toggle: #d03f2f;
+  --key-red-shadow: #93261a;
+  --key-bkg-ltorange: #eae3dc;
+  --key-shadow-gryorange: hsl(28, 16%, 65%);
+
+  // text
+  --white: #ffffff;
+
+  // box shadow
+  --shadow-box: 0px .25rem;
+}
+
+:root[data-theme="mode2"]{
+  //background
+  --main-bkg: #e6e6e6;
+  --tggle-bkg: #d1cccc;
+  --screen-bkg: #ededed;
+
+  // keys
+  --key-bkg: #377f86;
+  --key-shadow: #1b5f65;
+  --key-toggle: #ca5502;
+  --key-red-shadow: #893901;
+  --key-bkg-ltorange: #e5e4e1;
+  --key-shadow-gryorange: #a69d91;
+
+  // text
+  --grayish-blue: #35352c;
+}
+
+:root[data-theme="mode3"]{
+  // backgrounds
+  --main-bkg: #160628;
+  --tggle-bkg: #1d0934;
+  --screen-bkg: #1d0934;
+
+  // keys
+  --key-bkg: #58077d;
+  --key-shadow: #bc15f4;
+  --key-toggle: #00e0d1;
+  --key-red-shadow: #6cf9f2;
+  --key-bkg-ltorange: #341c4f;
+  --key-shadow-gryorange: #871c9c;
+
+  // text
+  --grayish-blue: #ffe53d;
+  --drk-blue: #1b2428;
+}
+
+html {
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $ft-family;
+  font-size: 0.875rem;
+  color: var(--grayish-blue, white);
+  
+  line-height: 1.3;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+.container {
+  min-height: 100vh;
+
+  min-width: 375px;
+  background-color: var(--main-bkg);
+
+  @include breakpoint(large) {
+    display: grid;
+    place-content: center;
+  }
+
+  .calculator {
+    padding: 1.9375rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include breakpoint(large) {
+      padding: 0px;
+      width: 50vw;
+      max-width: 541px;
+    }
+
+    @include breakpoint(medHeight){
+      padding-top: 2.5rem;
+    }
+  }
+}

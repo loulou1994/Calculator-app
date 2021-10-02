@@ -1,0 +1,313 @@
+:root {
+  --main-bkg: #3a4764;
+  --tggle-bkg: #232c43;
+  --screen-bkg: #182034;
+  --key-bkg: #637097;
+  --key-shadow: #404e72;
+  --key-toggle: #d03f2f;
+  --key-red-shadow: #93261a;
+  --key-bkg-ltorange: #eae3dc;
+  --key-shadow-gryorange: hsl(28, 16%, 65%);
+  --white: #ffffff;
+  --shadow-box: 0px .25rem;
+}
+
+:root[data-theme="mode2"] {
+  --main-bkg: #e6e6e6;
+  --tggle-bkg: #d1cccc;
+  --screen-bkg: #ededed;
+  --key-bkg: #377f86;
+  --key-shadow: #1b5f65;
+  --key-toggle: #ca5502;
+  --key-red-shadow: #893901;
+  --key-bkg-ltorange: #e5e4e1;
+  --key-shadow-gryorange: #a69d91;
+  --grayish-blue: #35352c;
+}
+
+:root[data-theme="mode3"] {
+  --main-bkg: #160628;
+  --tggle-bkg: #1d0934;
+  --screen-bkg: #1d0934;
+  --key-bkg: #58077d;
+  --key-shadow: #bc15f4;
+  --key-toggle: #00e0d1;
+  --key-red-shadow: #6cf9f2;
+  --key-bkg-ltorange: #341c4f;
+  --key-shadow-gryorange: #871c9c;
+  --grayish-blue: #ffe53d;
+  --drk-blue: #1b2428;
+}
+
+html {
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 0.875rem;
+  color: var(--grayish-blue, white);
+  line-height: 1.3;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 375px;
+  background-color: var(--main-bkg);
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+  }
+}
+
+.container .calculator {
+  padding: 1.9375rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+  .container .calculator {
+    padding: 0px;
+    width: 50vw;
+    max-width: 541px;
+  }
+}
+
+@media screen and (max-height: 657px) {
+  .container .calculator {
+    padding-top: 2.5rem;
+  }
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.header > h1 {
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 800px) {
+  .header > h1 {
+    line-height: 1.2;
+  }
+}
+
+.header .theme-toggler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+}
+
+.header .btn-mode {
+  position: relative;
+  font-family: "Spartan", sans-serif;
+  font-size: 0.875rem;
+  padding: 0.215em 0.358em;
+  color: white;
+  background-color: var(--tggle-bkg);
+  border: none;
+  border-radius: 1em;
+}
+
+.header .btn-mode ol {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .btn-mode .mode {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.header .btn-mode .mode > span {
+  position: absolute;
+  top: -1.5rem;
+}
+
+.header .btn-mode .toggler {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  top: 0.214em;
+  left: 0.357em;
+  background-color: var(--key-toggle);
+  border-radius: 50%;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.header .btn-mode .toggler.mode-two {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.header .btn-mode .toggler.mode-three {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+.calculation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.calculation .screen {
+  padding: 1.65625rem 1.5625rem 1.65625rem 0;
+  text-align: right;
+  background-color: var(--screen-bkg);
+  border-radius: .5em;
+}
+
+@media screen and (min-width: 800px) {
+  .calculation .screen {
+    padding: 2.46875rem 2.25rem 2.46875rem 0px;
+  }
+  .calculation .screen h2 {
+    font-size: 2.8125rem;
+  }
+}
+
+.calculation .keyboard {
+  padding: 1.5rem;
+  background-color: var(--tggle-bkg);
+  border-radius: .5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1.125rem 0.8125rem;
+}
+
+@media screen and (min-width: 800px) {
+  .calculation .keyboard {
+    padding: 1.9375rem;
+    gap: 1.79rem 1.5rem;
+  }
+}
+
+.calculation .keyboard button {
+  height: 3.75rem;
+  padding: 1.09375rem 0;
+  font-family: "Spartan", sans-serif;
+  font-size: 1.5625rem;
+  color: var(--grayish-blue, #444b5a);
+  border: none;
+  border-radius: 0.24em;
+  background-color: var(--key-bkg-ltorange);
+  -webkit-box-shadow: var(--shadow-box) var(--key-shadow-gryorange);
+          box-shadow: var(--shadow-box) var(--key-shadow-gryorange);
+}
+
+.calculation .keyboard button:last-child {
+  color: var(--drk-blue, var(--white));
+  background-color: var(--key-toggle);
+  -webkit-box-shadow: var(--shadow-box) var(--key-red-shadow);
+          box-shadow: var(--shadow-box) var(--key-red-shadow);
+}
+
+@media screen and (min-width: 800px) {
+  .calculation .keyboard button {
+    font-size: 1.8125rem;
+    padding: 0.517em 0;
+  }
+}
+
+.calculation .keyboard .col-lg {
+  width: 100%;
+  grid-column: span 2;
+}
+
+.calculation .keyboard .ft-sml {
+  font-size: 1.0625rem;
+  background-color: var(--key-bkg);
+  color: var(--white);
+  -webkit-box-shadow: var(--shadow-box) var(--key-shadow);
+          box-shadow: var(--shadow-box) var(--key-shadow);
+}
+/*# sourceMappingURL=style.css.map */

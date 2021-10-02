@@ -1,0 +1,143 @@
+html {
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 0.875rem;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin-bottom: 1.2em;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+.container {
+  min-width: 375px;
+  height: 100vh;
+  background-color: #3a4764;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    display: grid;
+    place-content: center;
+  }
+}
+
+.container .calculator {
+  padding: 2rem 1.5rem 2rem 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .container .calculator {
+    padding: 0;
+    width: 50vw;
+    max-width: 541px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 2rem;
+}
+
+.header > p {
+  font-size: 2rem;
+}
+
+.header .theme-toggler {
+  display: flex;
+  align-items: center;
+  gap: 1.4375rem;
+}
+
+.header .theme-toggler > p {
+  padding-top: 4px;
+}
+
+.header .btn-mode {
+  position: relative;
+  font-family: "Spartan", sans-serif;
+  font-size: 0.875rem;
+  padding: 0.215em 0.358em;
+  color: #ffffff;
+  background-color: #232c43;
+  border: none;
+  border-radius: 1em;
+}
+
+.header .btn-mode ol {
+  list-style-type: none;
+  display: flex;
+}
+
+.header .btn-mode .mode {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.header .btn-mode .mode > span {
+  position: absolute;
+  top: -1.5rem;
+}
+
+.header .btn-mode .toggler {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  top: 0.214em;
+  left: 0.357em;
+  background-color: #d03f2f;
+  border-radius: 50%;
+  transition: all 250ms ease-in-out;
+}
+
+.header .btn-mode .toggler.mode-two {
+  transform: translateX(100%);
+}
+
+.header .btn-mode .toggler.mode-three {
+  transform: translateX(200%);
+}
+/*# sourceMappingURL=style.css.map */

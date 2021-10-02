@@ -1,0 +1,24 @@
+$white: white;
+// main font size
+$ft-size: 2rem;
+
+// font family
+$ft-family: 'Spartan', sans-serif;
+
+// breakpoints
+$breakpoints:('medium': 550px,'large': 800px, 'medHeight': 657px);
+
+@mixin breakpoint($size) {
+    $breakpoint-size: map-get($breakpoints, $size);
+    @if($size != medHeight){
+        @media screen and (min-width: $breakpoint-size){
+            @content;
+        }
+    }
+    
+    @if($size == medHeight){
+        @media screen and (max-height: $breakpoint-size){
+            @content;
+        }
+    }
+}

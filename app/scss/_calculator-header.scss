@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  > h1 {
+    font-size: 2rem;
+    margin: 0;
+    line-height: 1.5;
+
+    @include breakpoint(large){
+      line-height: 1.2;
+    }
+  }
+
+  .theme-toggler {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .btn-mode {
+    position: relative;
+    font-family: $ft-family;
+    font-size: 0.875rem;
+    padding: 0.215em 0.358em;
+    color: $white;
+    background-color: var(--tggle-bkg);
+    border: none;
+    border-radius: 1em;
+
+    ol {
+      list-style-type: none;
+      display: flex;
+    }
+
+    .mode {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      > span {
+        position: absolute;
+        top: -1.5rem;
+      }
+    }
+
+    .toggler {
+      content: "";
+      position: absolute;
+      width: 1.25rem;
+      height: 1.25rem;
+      top: 0.214em;
+      left: 0.357em;
+      background-color: var(--key-toggle);
+      border-radius: 50%;
+      transition: all 250ms ease-in-out;
+
+      &.mode-two{
+          transform: translateX(100%);
+      }
+
+      &.mode-three{
+          transform: translateX(200%);
+      }
+    }
+  }
+}
